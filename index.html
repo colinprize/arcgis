@@ -51,5 +51,22 @@
       </arcgis-map>
     </calcite-shell>
     <calcite-loader></calcite-loader>
+
+    <script>
+      document
+        .querySelector("arcgis-map")
+        .addEventListener("viewReady", async (event) => {
+          const view = event.detail.view;
+          const portalItem = view.map.portalItem;
+          const navigationLogo = document.querySelector(
+            "calcite-navigation-logo"
+          );
+          navigationLogo.heading = portalItem.title;
+          navigationLogo.description = portalItem.snippet;
+          navigationLogo.thumbnail = portalItem.thumbnailUrl;
+          navigationLogo.href = portalItem.itemPageUrl;
+          navigationLogo.label = "Thumbnail of map";
+        });
+    </script>
   </body>
 </html>
