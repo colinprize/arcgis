@@ -28,13 +28,28 @@
     <script src="https://js.arcgis.com/4.28/"></script>
     <script
       type="module"
+      src="https://js.arcgis.com/calcite-components/1.9.2/calcite.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css"
+    />
+    <script
+      type="module"
       src="https://js.arcgis.com/map-components/4.28/arcgis-map-components.esm.js"
     ></script>
   </head>
 
   <body>
-    <arcgis-map item-id="05e015c5f0314db9a487a9b46cb37eca">
-      <arcgis-legend position="bottom-right" />
-    </arcgis-map>
+    <calcite-shell>
+      <calcite-navigation slot="header">
+        <calcite-navigation-logo slot="logo" target="_blank" />
+      </calcite-navigation>
+      <arcgis-map item-id="05e015c5f0314db9a487a9b46cb37eca">
+        <arcgis-legend position="bottom-right" />
+      </arcgis-map>
+    </calcite-shell>
+    <calcite-loader></calcite-loader>
   </body>
 </html>
